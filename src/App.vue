@@ -1,29 +1,16 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import Container from "./components/Container.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Header title="Timestamp Converter" />
+  <Container>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada vel purus nec scelerisque. In
+    luctus neque at nibh auctor bibendum. Proin commodo neque eu elementum pellentesque. Nullam at purus sapien. Nullam
+    blandit lobortis nisl vel imperdiet. Nam sagittis sapien risus, mollis posuere turpis dignissim eget. Aliquam eu est
+    ligula. Fusce maximus consectetur sem sed commodo. Fusce feugiat eleifend ligula sed elementum. Nullam bibendum
+    velit vel turpis porta, eget ornare mi euismod. Aenean pulvinar nisl vitae risus fringilla ultrices. Integer dui
+    augue, facilisis nec condimentum dictum, efficitur non est. Quisque porttitor nulla ac lorem semper accumsan.
+    Maecenas ut lectus ut libero consequat malesuada a id purus. Nam vehicula libero ac tellus tempor, eget scelerisque
+    lacus pellentesque. Sed non justo quis dolor consequat laoreet.</Container>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
