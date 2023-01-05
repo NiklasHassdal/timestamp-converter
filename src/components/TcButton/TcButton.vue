@@ -1,13 +1,13 @@
 <script setup lang="ts">
-interface Props {
+interface ButtonProps {
   kind: "primary" | "secondary" | "ghost";
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<ButtonProps>(), {
   kind: "primary",
 });
 
-const emit = defineEmits(["click"]);
+defineEmits(["click"]);
 </script>
 
 <template>

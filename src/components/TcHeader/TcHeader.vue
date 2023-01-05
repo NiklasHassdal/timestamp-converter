@@ -1,5 +1,9 @@
 <script setup lang="ts">
-defineProps<{ title: string }>();
+interface HeaderProps {
+  title: String;
+}
+
+defineProps<HeaderProps>();
 </script>
 
 <template>

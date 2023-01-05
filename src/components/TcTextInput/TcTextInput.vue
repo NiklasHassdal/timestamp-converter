@@ -1,8 +1,12 @@
-<script lang="ts">
-export default {
-  props: ["modelValue", "label", "id"],
-  emits: ["update:modelValue"],
-};
+<script setup lang="ts">
+interface TextInputProps {
+  label: String;
+  modelValue: String;
+}
+
+defineProps<TextInputProps>();
+
+defineEmits(["update:modelValue"]);
 </script>
 
 <template>
