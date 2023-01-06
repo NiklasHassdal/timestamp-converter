@@ -29,6 +29,7 @@ defineEmits(["click"]);
 .tc-button {
   margin: 0.25rem 0.25rem 0 0;
   padding: 0.5rem 1rem;
+  height: 2.5rem;
   border-radius: 4px;
   filter: drop-shadow(0px 0px 2px #ccc);
   cursor: pointer;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface HeaderProps {
-  title: String;
+  title: string;
 }
 
 defineProps<HeaderProps>();

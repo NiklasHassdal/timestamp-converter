@@ -1,12 +1,12 @@
 <script setup lang="ts">
 interface TextInputProps {
-  label: String;
-  modelValue: String;
+  label: string;
+  modelValue: string | number;
 }
 
 defineProps<TextInputProps>();
 
-defineEmits(["update:modelValue"]);
+defineEmits(["update:modelValue", "input"]);
 </script>
 
 <template>
@@ -15,7 +15,10 @@ defineEmits(["update:modelValue"]);
     class="tc-text-input"
     type="text"
     :value="modelValue"
-    @input="$emit('update:modelValue', ($event as any).target.value)"
+    @input="
+      $emit('update:modelValue', ($event as any).target.value);
+      $emit('input', $event);
+    "
   />
 </template>
 
@@ -44,6 +47,7 @@ defineEmits(["update:modelValue"]);
   display: block;
   margin: 0;
   padding: 0;
+  height: 1rem;
   font-size: 0.75rem;
 }
 </style>
