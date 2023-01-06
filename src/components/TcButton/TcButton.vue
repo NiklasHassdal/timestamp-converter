@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface ButtonProps {
-  kind: "primary" | "secondary" | "ghost";
+  kind?: "primary" | "secondary" | "ghost";
+  animate?: boolean;
 }
 
 withDefaults(defineProps<ButtonProps>(), {
@@ -11,16 +12,13 @@ defineEmits(["click"]);
 </script>
 
 <template>
-  <button
-    :class="{
-      'tc-button': true,
-      'tc-button-primary': kind === 'primary',
-      'tc-button-secondary': kind === 'secondary',
-      'tc-button-ghost': kind === 'ghost',
-    }"
-    v-bind="$attrs"
-    @click="$emit('click')"
-  >
+  <button :class="{
+    'tc-button': true,
+    'tc-button-animate': animate,
+    'tc-button-primary': kind === 'primary',
+    'tc-button-secondary': kind === 'secondary',
+    'tc-button-ghost': kind === 'ghost',
+  }" v-bind="$attrs" @click="$emit('click')">
     <slot />
   </button>
 </template>
@@ -74,5 +72,32 @@ defineEmits(["click"]);
   border: 1px solid #888;
   background-color: #aaa;
   color: #000;
+}
+
+.tc-button-animate:focus {
+  -webkit-animation: beat 0.2s;
+  animation: beat 0.2s;
+}
+
+.tc-button-animate:active {
+  -webkit-animation: none;
+  animation: none;
+}
+
+@keyframes beat {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  25% {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 </style>

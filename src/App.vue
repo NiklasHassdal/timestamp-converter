@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { TcHeader, TcContainer, TcTextInput, TcButton } from "./components";
-import moment from "moment";
 </script>
 
 <script lang="ts">
 import { ref } from "vue";
+import moment from "moment";
+
 let dateTimeText = ref(moment().format("YYYY-MM-DD HH:mm:ss"));
 let unixTimestamp = ref(moment(dateTimeText.value).unix());
 
@@ -54,7 +55,7 @@ function copyUnixTimestamp() {
         <TcTextInput label="Date and time" @input="dateTimeTextChanged" v-model="dateTimeText" />
       </div>
       <div style="padding-top: 1rem">
-        <TcButton kind="ghost" @click="copyDateTimeText">Copy</TcButton>
+        <TcButton kind="ghost" @click="copyDateTimeText" animate>Copy</TcButton>
       </div>
     </div>
     <div style="display: flex">
@@ -62,7 +63,7 @@ function copyUnixTimestamp() {
         <TcTextInput label="Unix timestamp" @input="unixTimestampChanged" v-model="unixTimestamp" />
       </div>
       <div style="padding-top: 1rem">
-        <TcButton kind="ghost" @click="copyUnixTimestamp">Copy</TcButton>
+        <TcButton kind="ghost" @click="copyUnixTimestamp" animate>Copy</TcButton>
       </div>
     </div>
     <div>
