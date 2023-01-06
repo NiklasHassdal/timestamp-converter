@@ -67,6 +67,12 @@ function copyUnixTimestamp() {
       </div>
     </div>
     <div>
+      <span style="line-height: 2.5rem; margin-right: 1rem;">Set to:</span>
+      <TcButton @click="setMoment(moment())">Now</TcButton>
+      <TcButton @click="setMoment(moment().startOf('day'))">Today</TcButton>
+      <TcButton @click="setMoment(moment().startOf('day').add(1, 'day'))">Tomorrow</TcButton>
+    </div>
+    <div>
       <span style="line-height: 2.5rem; margin-right: 1rem;">Start of:</span>
       <TcButton @click="setMoment(getMoment().startOf('day'))">Day</TcButton>
       <TcButton @click="setMoment(getMoment().startOf('isoWeek'))">Week</TcButton>
@@ -90,11 +96,11 @@ function copyUnixTimestamp() {
     </div>
     <div>
       <span style="line-height: 2.5rem; margin-right: 1rem;">Subtract:</span>
-      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'hour'))">+1 hour</TcButton>
-      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'day'))">+1 day</TcButton>
-      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'week'))">+1 week</TcButton>
-      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'month'))">+1 month</TcButton>
-      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'year'))">+1 year</TcButton>
+      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'hour'))">-1 hour</TcButton>
+      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'day'))">-1 day</TcButton>
+      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'week'))">-1 week</TcButton>
+      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'month'))">-1 month</TcButton>
+      <TcButton kind="secondary" @click="setMoment(getMoment().subtract(1, 'year'))">-1 year</TcButton>
     </div>
   </TcContainer>
 </template>
