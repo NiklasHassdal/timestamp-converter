@@ -36,6 +36,14 @@ function setMoment(value: moment.Moment) {
   unixTimestamp.value = value.unix();
   unixTimestampChanged();
 }
+
+function copyDateTimeText() {
+  navigator.clipboard.writeText(dateTimeText.value);
+}
+
+function copyUnixTimestamp() {
+  navigator.clipboard.writeText(unixTimestamp.value.toFixed());
+}
 </script>
 
 <template>
@@ -46,7 +54,7 @@ function setMoment(value: moment.Moment) {
         <TcTextInput label="Date and time" @input="dateTimeTextChanged" v-model="dateTimeText" />
       </div>
       <div style="padding-top: 1rem">
-        <TcButton kind="ghost">Copy</TcButton>
+        <TcButton kind="ghost" @click="copyDateTimeText">Copy</TcButton>
       </div>
     </div>
     <div style="display: flex">
@@ -54,7 +62,7 @@ function setMoment(value: moment.Moment) {
         <TcTextInput label="Unix timestamp" @input="unixTimestampChanged" v-model="unixTimestamp" />
       </div>
       <div style="padding-top: 1rem">
-        <TcButton kind="ghost">Copy</TcButton>
+        <TcButton kind="ghost" @click="copyUnixTimestamp">Copy</TcButton>
       </div>
     </div>
     <div>
